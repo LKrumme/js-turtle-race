@@ -70,8 +70,6 @@ def startGame():
 
     screen.clear()
 
-    screen.onkey(startGame, "r")
-    screen.listen()
 
     screen.bgpic('hintergrund1080p.png')
     turtle.hideturtle()
@@ -114,6 +112,9 @@ def show_winner():
             align='center',
             font=('Times New Roman', 32, 'bold')
         )
+    #Funktionalität zum Spiel neustarten soll erst wieder aktiviert werden, wenn Gewinner angezeigt wurde
+    screen.onkey(startGame, "r") 
+    screen.listen()
 
 
 screen.onkey(startGame, "r")
