@@ -63,12 +63,16 @@ def game_loop():
         run = False
         return
 
-    screen.ontimer(game_loop, 50)  # 10 FPS
+    screen.ontimer(game_loop, 50)  # 20 FPS
 
 def startGame():
     global tList, winners, run
 
     screen.clear()
+
+    screen.onkey(startGame, "r")
+    screen.listen()
+
     screen.bgpic('hintergrund1080p.png')
     turtle.hideturtle()
 
@@ -76,7 +80,7 @@ def startGame():
     winners = []
     run = True
 
-    colors = ["red", "green", "blue", "orange"]
+    colors = ["red", "green", "blue", "yellow"]
     start = -(win_heigth / 2) + 20
 
     for i in range(turtles):
